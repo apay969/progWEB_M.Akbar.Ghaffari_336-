@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('Screenshot\ 2024-10-13\ 213814.png'); /* Ganti ini dengan path gambar */
+    background-size: cover; /* Menyesuaikan ukuran gambar dengan tampilan */
+    background-position: center; /* Memposisikan gambar di tengah */
+    background-repeat: no-repeat; /* Mencegah gambar diulang */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Agar transparan sedikit untuk melihat background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #2273f2;
+    width: 70%;
+}
+
+button {
+    padding: 10px;
+    background-color: #2273f2;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1a5dc9;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    background-color: #b5e5ef;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+li .task-text {
+    flex-grow: 1;
+}
