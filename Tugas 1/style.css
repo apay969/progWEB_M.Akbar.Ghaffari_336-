@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-image: url('Screenshot\ 2024-10-13\ 213650.png'); /* Ganti ini dengan path gambar */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .calculator {
+    background-color: rgba(53, 53, 71, 0.9); /* Agar background kalkulator transparan */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .display input {
+    background-color: #1B1B2F;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  button {
+    background-color: #6B66FF;
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #5A56FF;
+  }
+  
+  button:active {
+    background-color: #4743FF;
+  }
+  
+  button:nth-child(4n+1) {
+    background-color: #2C2C41;
+  }
+  
