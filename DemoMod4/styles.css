@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('umm.png'); /* Ganti dengan path ke gambar Anda */
+    background-size: cover; /* Mengatur gambar agar menutupi seluruh layar */
+    background-position: center; /* Menempatkan gambar di tengah */
+    background-attachment: fixed; /* Membuat gambar tetap saat di-scroll */
+    background-repeat: no-repeat; /* Agar gambar tidak diulang */
+    color: #fff; /* Agar teks lebih kontras dengan latar belakang */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.8); /* Navbar dengan transparansi */
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    color: #00bcd4;
+}
+
+/* Tambahan untuk tautan login di navbar */
+.nav-links .login-link {
+    font-weight: bold;
+    background-color: #00bcd4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links .login-link:hover {
+    background-color: #0097a7;
+    color: white;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparansi semi-putih */
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+    color: #333; /* Warna teks dalam form */
+}
+
+.main-content h1, .main-content h2 {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Warna label agar kontras */
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6); /* Transparansi pada input */
+    color: #333; /* Warna teks input */
+}
+
+input::placeholder {
+    color: #777; /* Placeholder kontras */
+}
+
+button.btn {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #0097a7;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(51, 51, 51, 0.8); /* Footer dengan transparansi */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

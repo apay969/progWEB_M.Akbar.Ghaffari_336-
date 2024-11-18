@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">GradeMaster</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="result.html">View Results</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="login.html" class="login-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="main-content">
+            <h1>Welcome to GradeMaster</h1>
+            <p>Manage and input student grades efficiently!</p>
+        </section>
+        <section id="input" class="main-content">
+            <h2>Input Student Grades</h2>
+            <form id="gradeForm">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Enter subject name" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade</label>
+                    <input type="number" id="grade" name="grade" placeholder="Enter grade" min="0" max="100" required>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+        <section id="summary" class="main-content">
+            <h2>Summary of Grades</h2>
+            <div id="gradeSummary">
+                <p>No data available yet. Submit some grades to see the summary here!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 GradeMaster | All Rights Reserved</p>
+    </footer>
+    <script>
+        // Form submission handler
+        const gradeForm = document.getElementById('gradeForm');
+
+        gradeForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            const studentName = document.getElementById('studentName').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const grade = parseInt(document.getElementById('grade').value.trim(), 10);
+
+            // Validate inputs
+            if (!studentName || !subject || isNaN(grade)) {
+                alert('All fields are required and grade must be a number!');
+                return;
+            }
+
+            // Get existing grades from Local Storage or initialize as empty array
+            const grades = JSON.parse(localStorage.getItem('grades')) || [];
+
+            // Add new grade to the array
+            grades.push({ studentName, subject, grade });
+
+            // Save back to Local Storage
+            localStorage.setItem('grades', JSON.stringify(grades));
+
+            // Display updated summary
+            displayGradeSummary(grades);
+
+            // Reset form
+            gradeForm.reset();
+        });
+
+        // Function to display summary of grades
+        function displayGradeSummary(grades) {
+            const summaryDiv = document.getElementById('gradeSummary');
+            if (grades.length === 0) {
+                summaryDiv.innerHTML = "<p>No data available yet. Submit some grades to see the summary here!</p>";
+            } else {
+                const totalGrades = grades.reduce((sum, item) => sum + item.grade, 0);
+                const averageGrade = (totalGrades / grades.length).toFixed(2);
+
+                let highestGrade = grades[0];
+                let lowestGrade = grades[0];
+
+                grades.forEach((item) => {
+                    if (item.grade > highestGrade.grade) highestGrade = item;
+                    if (item.grade < lowestGrade.grade) lowestGrade = item;
+                });
+
+                summaryDiv.innerHTML = `
+                    <p><strong>Total Grades:</strong> ${grades.length}</p>
+                    <p><strong>Average Grade:</strong> ${averageGrade}</p>
+                    <p><strong>Highest Grade:</strong> ${highestGrade.grade} (Student: ${highestGrade.studentName}, Subject: ${highestGrade.subject})</p>
+                    <p><strong>Lowest Grade:</strong> ${lowestGrade.grade} (Student: ${lowestGrade.studentName}, Subject: ${lowestGrade.subject})</p>
+                `;
+            }
+        }
+
+        // Load existing grades on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const grades = JSON.parse(localStorage.getItem('grades')) || [];
+            displayGradeSummary(grades);
+        });
+    </script>
+</body>
+</html>

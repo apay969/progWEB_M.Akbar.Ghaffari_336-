@@ -1,0 +1,129 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    background: url('umm.png') no-repeat center center; /* Gunakan gambar Anda */
+    background-size: cover;
+    position: relative;
+}
+
+/* Hapus overlay biru */
+.left-section .overlay {
+    display: none; /* Overlay dihapus */
+}
+
+.left-section .footer-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header .logo {
+    width: 80px;
+    margin: 0 10px;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.header h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.header p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Login Box */
+.login-box {
+    width: 350px;
+    padding: 20px 30px;
+    background-color: #113146;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+
+.login-box h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.login-box .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-box .form-group label {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login-box .form-group input,
+.login-box .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.login-box .login-btn {
+    background-color: #005FA3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-box .login-btn:hover {
+    background-color: #004B82;
+}
